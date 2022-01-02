@@ -1,0 +1,48 @@
+##############################################################
+    ____    _                            ____            __ 
+   / __ \  (_)___ _____  ____ _____     / __ \___  _____/ /_
+  / / / / / / __ `/ __ \/ __ `/ __ \   / /_/ / _ \/ ___/ __/
+ / /_/ / / / /_/ / / / / /_/ / /_/ /  / _, _/  __(__  ) /_  
+/_____/_/ /\__,_/_/ /_/\__, /\____/  /_/ |_|\___/____/\__/  
+     /___/            /____/                                
+
+#############################################################
+
+Course : Django 
+Tutor :  Mosh Hamedani 
+Year  : 2022
+
+#############################################################
+
++--------------+
+| Introduction |
++--------------+
+
+- Its a free and open source framework which is super popular 
+- Its also known as a batteries included framework 
+- It helps in giving out many features out of the box such as Admin site, ORM, Authentication and Caching 
+
+This helps in focusing in just building the app than building a syntax.. 
+
+Remember, Django is a backend framework. Not frontend Framework!! 
+
++--------------------------+
+| Creating Your Django App |
++--------------------------+
+
+- To Create a django project, best use a virtual environment to work on the same 
+- You could use the pipenv package to create your virtual environment 
+- Use the pipenv Shell command to create a virtual environment 
+- Now use the below command to create a django project 
+
+      "django-admin startproject storefront"
+
+- On Using this command, you might end up with a recursive folder with a main folder and the subsidiary folder with the same name 
+- To avoid this use the below command 
+
+      "django-admin startproject storefront ."
+
++--------------------------+
+| Creating your first App  |
++--------------------------+
+
