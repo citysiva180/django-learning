@@ -46,3 +46,43 @@ Remember, Django is a backend framework. Not frontend Framework!!
 | Creating your first App  |
 +--------------------------+
 
+To understand apps, check out your settings.py file. note that there is a list of installed apps which are present there
+Understand that the Django Will only work with the app listed in this list. So you need to add your created app so the same would work 
+
+INSTALLED_APPS = [
+    'django.contrib.admin',   --> The Django Admin listed here will help us with the crud base admin panel, which is super useful for Content Management System
+    'django.contrib.auth',    --> This app will help us to authenticate users in our app. I guess, these days we could use 
+    'django.contrib.contenttypes',  --> This will be discussed later 
+    'django.contrib.sessions', --> Sessions are rarely used these days. Hence this app is deleted
+    'django.contrib.messages', --> Messages app helps in notifying users for their actions
+    'django.contrib.staticfiles', --> Static Files deals with the images and other static assets added in the django Project 
+]
+
+To Create our own app, We need to run this following command 
+- " python manage.py startapp playground "
+
+Ensure to change to the directory and run the command. 
+
+On checking the folder structure of the app you could observe the following 
+
+- playground --> App folder name 
+      - Migrations --> DB folder 
+      - __init__.py --> Package initializer 
+      - admin.py  --> Administrator | how the admin interface for this app will look like   
+      - apps.py  --> Should be config.py but they are calling it apps.py 
+      - models.py --> Models.py will help in adding the db models to this app 
+      - tests.py --> users for testing 
+      - views.py --> This name is misleading. Its a controller or a request handler
+
+
+Now register your app in the Installed apps. 
+
++--------------------------+
+| Creating your first App  |
++--------------------------+
+
+Writing views : 
+      A view in django is nothing but a request handler. It would consume HTTP request and give out response 
+      - A view here in django is a very misleading name. Since Views deal with only the viewing part of the app, this naming is not appropriate 
+      for the app file 
+      - Where in the actual visual views in django app is known as a template. Guess this is the major reason why we confuse django views
