@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # On sending any request with the app  name it would route to the playground apps
     # note that the include function will help in importing files into this file without the import statement
-    path('playground/', include('playground.urls'))
+    path('playground/', include('playground.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
 ]

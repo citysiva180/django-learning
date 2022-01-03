@@ -6,6 +6,8 @@ from django.http import HttpResponse
 
 
 def say_hello(request):
+    x = 1
+    y = 2
     return render(request, 'hello.html', {"name": "Siva"})
 
 # post creating this function, we could then add this in the urls
