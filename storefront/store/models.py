@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import related
 
 # Create your models here.
 # build a db with this field with the exact data type
@@ -12,6 +13,8 @@ class Promotion(models.Model):
 
 class Collection(models.Model):
     title = models.CharField(max_length=255)
+    featured_product = models.ForeignKey(
+        'Product', on_delete=models.SET_NULL, null=True, related_name='+')
 
 
 class Product(models.Model):
