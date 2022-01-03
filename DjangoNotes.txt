@@ -86,3 +86,59 @@ Writing views :
       - A view here in django is a very misleading name. Since Views deal with only the viewing part of the app, this naming is not appropriate 
       for the app file 
       - Where in the actual visual views in django app is known as a template. Guess this is the major reason why we confuse django views
+
+
++------------+
+| Templates  |
++------------+
+
+The templates are the actual views in a django project. 
+Create a template folder with the html file. 
+pass the html file in the view folder so the logic could be executed to run the same 
+
++---------------------+
+| Adding Debug tools  |
++---------------------+
+
+- Use vs code debug tool to click on the create json file. Select Django as the debuging option
+- With this you could add breakpoints and add variables to watch list so you could check on the same 
+- Use this debug tool to keep watch variables and breakpoints so you could check the variable assigning 
+
+Django DeBug Tools 
+
+- Using Django debug tools which is a python package you could add a debug tool bar which will help you in seeing the 
+requests and responses sent to your django app. This would help you to visualize SQL queries and other elements which are applied to your applications
+
+- use the "python -m pip install django-debug-toolbar" to install the app 
+- Add the app  to the Installed apps in the settings 
+
+
+                  INSTALLED_APPS = [
+                  # ...
+                  "debug_toolbar",
+                  # ...
+                  ]
+
+-  Add django-debug-toolbar’s URLs to your project’s URLconf:
+
+      from django.urls import include, path
+
+            urlpatterns = [
+            # ...
+            path('__debug__/', include('debug_toolbar.urls')),
+            ]
+
+ - The Debug Toolbar is mostly implemented in a middleware. Add it to your MIDDLEWARE setting:
+
+            MIDDLEWARE = [
+                  # ...
+                  "debug_toolbar.middleware.DebugToolbarMiddleware",
+                  # ...
+            ]
+
+Finally on running you could find the toolbar up the right side in your browser 
+
++----------------------------+
+| Organizing Models in Apps  |
++----------------------------+
+
