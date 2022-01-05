@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 from store.models import Product
@@ -8,7 +9,8 @@ from store.models import Product
 
 
 def say_hello(request):
-    queryset = Product.objects.filter(last_update__year=2021)
+    queryset = Product.objects.filter(
+        Q(inventory__lt=10) | ~Q(unit_price__lt=20))
     return render(request, 'hello.html', {"name": "Siva", 'products': list(queryset)})
 
 # post creating this function, we could then add this in the urls
