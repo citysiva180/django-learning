@@ -13,8 +13,7 @@ def say_hello(request):
     # products with inventory < 10 and Price < 20
     # queryset = Product.objects.values(
     #     'id', 'title')  # helps in limiting the data
-    queryset = Product.objects.filter(
-        id__in=OrderItem.objects.values('product_id').distinct()).order_by('title')
+    queryset = Product.objects.values('id', 'title', 'collection__title')
 
     return render(request, 'hello.html', {"name": "Siva", 'products': list(queryset)})
 
