@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.db.models import Q
+from django.db.models import Q, F
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
-from store.models import Product
+from store.models import Product, OrderItem
+# from storefront.store.models import OrderItem
 # Create your views here.
 
 # This http function is a default function and it accepts string as a message parameter
@@ -10,8 +11,11 @@ from store.models import Product
 
 def say_hello(request):
     # products with inventory < 10 and Price < 20
+    # queryset = Product.objects.values(
+    #     'id', 'title')  # helps in limiting the data
     queryset = Product.objects.filter(
-        Q(inventory__lt=10) | ~Q(unit_price__lt=20))
+        id__in=OrderItem.objects.values('product_id').distinct()).order_by('title')
+
     return render(request, 'hello.html', {"name": "Siva", 'products': list(queryset)})
 
 # post creating this function, we could then add this in the urls
