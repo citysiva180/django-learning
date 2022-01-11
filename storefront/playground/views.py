@@ -17,6 +17,7 @@ def say_hello(request):
 
     return render(request, 'hello.html', {"name": "Siva", 'products': list(queryset)})
 
+
 # post creating this function, we could then add this in the urls
 
 # NOTES FOR RETIRVING OBJECTS
